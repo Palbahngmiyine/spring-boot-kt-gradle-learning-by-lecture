@@ -1,8 +1,6 @@
 package dev.subux.inflearnktgradle.account
 
-import org.springframework.data.jpa.repository.JpaRepository
-import java.util.*
+import org.springframework.data.repository.CrudRepository
 
-interface AccountRepository : JpaRepository<Account, Long> {
-    fun findByUsername(username: String): Optional<Account>?
+interface AccountRepository : CrudRepository<Account, String> {
 }

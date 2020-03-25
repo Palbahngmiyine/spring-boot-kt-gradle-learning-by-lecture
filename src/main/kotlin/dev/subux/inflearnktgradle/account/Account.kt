@@ -1,13 +1,11 @@
 package dev.subux.inflearnktgradle.account
 
-import javax.persistence.*
+import org.springframework.data.annotation.Id
+import org.springframework.data.redis.core.RedisHash
 
-@Entity
-class Account (
-        var username: String,
-        var password: String,
-        var active: Boolean,
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        var id: Long? = null
+@RedisHash("accounts")
+class Account(
+    var username: String,
+    var email: String,
+    @Id var id: String? = null
 )
