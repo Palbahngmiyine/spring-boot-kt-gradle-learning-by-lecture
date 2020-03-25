@@ -1,4 +1,11 @@
 spring:
-  h2:
-    console:
-      enabled: true
+  datasource:
+    username: "subin"
+    password: "pass"
+    url: "jdbc:postgresql://localhost:5432/springboot"
+
+  jpa:
+    hibernate:
+      ddl-auto: "validate"
+    generate-ddl: false
+    show-sql: true

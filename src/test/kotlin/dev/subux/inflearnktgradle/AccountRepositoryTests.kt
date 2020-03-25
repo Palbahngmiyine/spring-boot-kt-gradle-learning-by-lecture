@@ -15,6 +15,7 @@ class AccountRepositoryTests {
 
     @Test
     fun di () {
+        // resources 폴더 아래에 schema.sql 파일을 만들어두고 SQL문을 작성하면 시작할때 해당 파일 읽어서 sql 쿼리 질의함
         val account = Account("subin", "pass")
         val newAccount = accountRepository.save(account)
         assertThat(newAccount).isNotNull
